@@ -1,0 +1,183 @@
+Git
+
+1. Basics
+- Why VCS?
+- Git is difficult to learn
+- Leaky abstraction === user complexity
+- Opinionated, but powerful and safe
+- Need to know command line first
+- Think in versions
+- Analogy: legal system tracks changes by time
+- Compare "Save as" system
+  - what about directories?
+  - syncing users?
+  - simultaneous updates? "clobbering"
+  - Gotcha: "checkout" (different than other VCS)
+- Terminology
+  - repository
+  - working copy
+  - commit
+  - branches
+  - merging
+- Git works best with text files
+1. Git
+- distributed
+- stored locally in hidden folder
+- commits or it didn't happen
+- commits given unique IDs, text labels optional
+- commits stored as incremental changes
+- commits or it didn't happen
+- changes
+  - difference between physical file and logical file
+  - saveas1.txt, saveas2.txt etc
+  - difference is called 'state': moment in time
+  - no folder full of old files - git stores states
+  - time travel is complicated
+  - git suffers from an excess of simplicity
+- Exercise: command line basics
+- Syntax
+  - git commandname --option parameter1 parameter2 --option
+  - think "git verb object adjectives"
+- Most Common Commands
+  - git config --global user.email "david@demaree.me"
+  - clone
+  - status
+  - checkout
+  - init
+2. Commits
+- Git is all about commits
+  - Really about managing commit manifests
+  - File states just happen to be associated
+  - Git proceeds by addition
+    - snapshots in time
+    - always additive
+  - immutable
+- Common commands
+  - git status
+  - git add
+    - staging area
+  - git commit
+    - snapshot 
+    - directed acyclic graph
+  - git remove
+    - after deleting yourself
+- Renaming
+  - the hard way
+  - git add -all
+  - git mv
+3. Branches
+- Basics
+  - default branch is named 'master'
+  - nothing special about the name or branch
+  - expected to be primary, stable branch
+- git branch
+  - DAG supports tree structure
+  - branch name === human friendly tag on a commit
+  - an email : a label :: a commit : a branch name
+  - pointers can move 
+  - Gotcha: git branch doesn't auto-do checkout
+- git checkout
+  - changes the working copy to match commit
+  - switches the branch
+- Pointer
+  - commit moves the pointer
+  - pointer : commits :: tape player : tape
+  - from any pointer, you can follow the graph backwards
+  - but other branches are isolated from changes
+  - pointer variable named HEAD
+  - HEAD tends to be tip of the branch
+- In Practice
+  - Topic branches
+  - branch early and often
+  - branch naming conventions & strategies
+  - relationship to releases
+4. Merging
+- Basics
+  - Branches may get thrown away, no problem
+  - but usually work that should go back to master
+  - Need to sync with master as it evolves
+  - Combining history & associated file states
+- Merge Types
+  - Fast forward
+  - Merge commits
+    - algorithm: find 1st common ancestor
+    - compare changed lines in all files
+    - if no conflicts, auto-commit
+    - no-commit: stage only
+    - multi-parent
+  - Merge conflict
+    - Enter conflict mode ( just a flag )
+    - Two changes to the same line
+    - Git may have staged the rest of the merge
+    - Edit files in working copy (conflict markers)
+    - Commit as normal - conflict mode auto-clears
+- In Practice
+  - Merge from master daily
+  - Topic branches should be short-lived
+5. Remotes
+- Basics
+  - All repos are decentralized
+  - Hub model for coordination
+  - Crazy redundancy
+- git remote
+  - 'add origin URL'
+  - without subcommands lists
+  - convention: primary named 'origin'
+- Branches
+  - No requirement for remote repo's branches to sync with locals
+  - Must specify name when pushing new branch
+- Protocols
+  - ssh
+    - default
+    - unrestricted
+  - https: supports restrictions
+  - git: predates wide use of https
+- git pull remote branch
+  - moves a branch from remote to local, then merge it to current
+  - FETCH_HEAD stores remote contents before merge
+  - pull === fetch + merge
+  - ensures safety
+- git push remote branch
+  - moves a branch from local to remote, then merge it to current
+  - non-fast-forward changes rejected - pull to fix
+- Tracking Branches
+  - Ability to pull to differently named branch can be powerful
+  - Tracking creates an alias so 'git pull' will work as expected  
+  - git push --set-upstream ( or -u )
+- git fetch
+  - move changes from remote to local, but no merge
+  - use it to sync before going offline
+  - git branch -r will show others' branches
+  - git checkout any of these, merge etc
+6. History
+- git log
+  - Displays commits in reverse chrono order
+  - options
+    --oneline to compress ( good for finding IDs )
+    --decorate to display branches, tags, etc
+    - diffs: -p (patch) and --stat
+    --graph
+    --pretty=format:"%cn committed %h on %cd" ( for piping )
+  - filtering
+    - by amount: git log -3
+    - by date: git log --before/after/since/until
+    - by author: git log --author="Name\|name@email.com"
+    - by commit message: git log --grep="string" ( -1 for case-insensitive )
+    - by source code: git log -S"string"
+    - source code, by regex: git log -G"regex"
+    - by branch diff: git log branchone..branchtwo
+    - any range can be reversed: git log branchtwo..branchone
+    --merges/no-merges
+- git diff
+7. Commit IDs
+- Constraints
+  - decentralized is really hard - avoiding conflicts
+  - offline makes it harder
+  - data integrity the prime concern
+- Solution
+  - IDs are created from the source content
+  - checksum (SHA) produces 40 character hash
+  - git displays as many of those 40 to uniquely identify
+N. Misc
+- git checkout commitID
+- Detached HEAD
