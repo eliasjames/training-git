@@ -12,7 +12,8 @@ Git
   - what about directories?
   - syncing users?
   - simultaneous updates? "clobbering"
-  - Gotcha: "checkout" (different than other VCS)
+  - "checkout" (Gotcha: different term than other VCS)
+- Git is really good at noticing changes to working copy
 - Terminology
   - repository
   - working copy
