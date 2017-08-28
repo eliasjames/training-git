@@ -14,6 +14,8 @@ Git
   - simultaneous updates? "clobbering"
   - "checkout" (Gotcha: different term than other VCS)
 - Git is really good at noticing changes to working copy
+- revert to "known good system"
+- fix mistakes, don't delete them
 - Terminology
   - repository
   - working copy
@@ -34,7 +36,6 @@ Git
   - difference is called 'state': moment in time
   - no folder full of old files - git stores states
   - time travel is complicated
-  - git suffers from an excess of simplicity
 - Exercise: command line basics
 - Syntax
   - git commandname --option parameter1 parameter2 --option
@@ -59,13 +60,16 @@ Git
     - staging area
   - git commit
     - snapshot 
-    - directed acyclic graph
   - git remove
     - after deleting yourself
 - Renaming
   - the hard way
   - git add -all
   - git mv
+- Undoing
+  - commit --amend
+  - uses staging area as commit
+  - also updates message
 3. Branches
 - Basics
   - default branch is named 'master'
@@ -182,3 +186,8 @@ Git
 N. Misc
 - git checkout commitID
 - Detached HEAD
+- git clean 
+- patches / git diff
+- git revert
+- git rebase
+- Github & pull requests
