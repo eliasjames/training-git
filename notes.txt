@@ -137,13 +137,13 @@ Git
     - unrestricted
   - https: supports restrictions
   - git: predates wide use of https
-- git pull remote branch
-  - moves a branch from remote to local, then merge it to current
+- git pull remote branch-name
+  - moves branch-name from remote to local, then merge it to current branch
   - FETCH_HEAD stores remote contents before merge
   - pull === fetch + merge
   - ensures safety
-- git push remote branch
-  - moves a branch from local to remote, then merge it to current
+- git push remote branch-name
+  - moves current branch from local to remote, then merge it to branch-name 
   - non-fast-forward changes rejected - pull to fix
 - Tracking Branches
   - Ability to pull to differently named branch can be powerful
