@@ -1,0 +1,1017 @@
+code $ ls
+REST				training-macys-20160929
+node-backbone			training-mobile-modular-js
+project				training-node
+rest-assets			training-node-backbone
+temp-bak			training-responsive
+training-angular		training-sqa
+training-git			training-tdd
+training-git-sandbox		training-web-dev
+training-javascript
+code $ mkdir git-sandbox
+code $ ls
+REST				training-javascript
+git-sandbox			training-macys-20160929
+node-backbone			training-mobile-modular-js
+project				training-node
+rest-assets			training-node-backbone
+temp-bak			training-responsive
+training-angular		training-sqa
+training-git			training-tdd
+training-git-sandbox		training-web-dev
+code $ vi ~/Desktop/Terminal\ Saved\ Output 
+code $ vi ~/Desktop/Terminal\ Saved\ Output 
+code $ cd git-sandbox/
+git-sandbox $ git init
+Initialized empty Git repository in /Users/eliascarlston/Documents/code/git-sandbox/.git/
+git-sandbox $ ls
+git-sandbox $ ls -la
+total 0
+drwxr-xr-x   3 eliascarlston  staff  102 Sep  4 11:41 .
+drwxr-xr-x  21 eliascarlston  staff  714 Sep  4 11:39 ..
+drwxr-xr-x   9 eliascarlston  staff  306 Sep  4 11:41 .git
+git-sandbox $ ls .git/
+HEAD		description	info		refs
+config		hooks		objects
+git-sandbox $ cd .git/
+.git $ git init
+Initialized empty Git repository in /Users/eliascarlston/Documents/code/git-sandbox/.git/.git/
+.git $ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	HEAD
+	config
+	description
+	hooks/
+	info/
+
+nothing added to commit but untracked files present (use "git add" to track)
+.git $ git add -all & git status
+[1] 24984
+error: did you mean `--all` (with two dashes ?)
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	HEAD
+	config
+	description
+	hooks/
+	info/
+
+nothing added to commit but untracked files present (use "git add" to track)
+[1]+  Exit 129                git add -all
+.git $ git add --all & git status
+[1] 25097
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	HEAD
+	config
+	description
+	hooks/
+	info/
+
+nothing added to commit but untracked files present (use "git add" to track)
+.git $ git add --all
+[1]+  Done                    git add --all
+.git $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   HEAD
+	new file:   config
+	new file:   description
+	new file:   hooks/applypatch-msg.sample
+	new file:   hooks/commit-msg.sample
+	new file:   hooks/post-update.sample
+	new file:   hooks/pre-applypatch.sample
+	new file:   hooks/pre-commit.sample
+	new file:   hooks/pre-push.sample
+	new file:   hooks/pre-rebase.sample
+	new file:   hooks/pre-receive.sample
+	new file:   hooks/prepare-commit-msg.sample
+	new file:   hooks/update.sample
+	new file:   info/exclude
+
+.git $ cd ../../
+.DS_Store                   training-javascript/
+REST/                       training-macys-20160929/
+git-sandbox/                training-mobile-modular-js/
+node-backbone/              training-node/
+project/                    training-node-backbone/
+rest-assets/                training-responsive/
+temp-bak/                   training-sqa/
+training-angular/           training-tdd/
+training-git/               training-web-dev/
+training-git-sandbox/       
+.git $ cd ../.git/
+.git/        config       hooks/       objects/     
+HEAD         description  info/        refs/        
+.git $ cd ../.git/
+.git/        config       hooks/       objects/     
+HEAD         description  info/        refs/        
+.git $ cd ../.git/
+.git/        config       hooks/       objects/     
+HEAD         description  info/        refs/        
+.git $ cd ../
+git-sandbox $ cp ../training-web-dev/
+.DS_Store                  intermediate-front-end/
+.git/                      intro-to-web-dev/
+.gitignore                 template.html
+handlebars/                web-development-intensive/
+git-sandbox $ cp ../training-web-dev/template.html .
+git-sandbox $ gs
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	template.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+git-sandbox $ 'git add file.html' && 'git status'
+-bash: git add file.html: command not found
+git-sandbox $ 'git add template.html' && 'git status'
+-bash: git add template.html: command not found
+git-sandbox $ git add template.html
+git-sandbox $ gs
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   template.html
+
+git-sandbox $ git rm --cached template.html 
+rm 'template.html'
+git-sandbox $ gs
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	template.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+git-sandbox $ git add template.html && git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   template.html
+
+git-sandbox $ gs
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   template.html
+
+git-sandbox $ git commit -m "first file" && git status
+[master (root-commit) 92f2df8] first file
+ 1 file changed, 14 insertions(+)
+ create mode 100644 template.html
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ vi template.html 
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   template.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git add template.html && git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   template.html
+
+git-sandbox $ git commit -m "First edit"
+[master 2287ae0] First edit
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+git-sandbox $ git status
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ cd .git/
+.git $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   HEAD
+	new file:   config
+	new file:   description
+	new file:   hooks/applypatch-msg.sample
+	new file:   hooks/commit-msg.sample
+	new file:   hooks/post-update.sample
+	new file:   hooks/pre-applypatch.sample
+	new file:   hooks/pre-commit.sample
+	new file:   hooks/pre-push.sample
+	new file:   hooks/pre-rebase.sample
+	new file:   hooks/pre-receive.sample
+	new file:   hooks/prepare-commit-msg.sample
+	new file:   hooks/update.sample
+	new file:   info/exclude
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	COMMIT_EDITMSG
+	index
+	logs/
+	objects/
+	refs/
+
+.git $ git add -all
+error: did you mean `--all` (with two dashes ?)
+.git $ git add --all
+.git $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   COMMIT_EDITMSG
+	new file:   HEAD
+	new file:   config
+	new file:   description
+	new file:   hooks/applypatch-msg.sample
+	new file:   hooks/commit-msg.sample
+	new file:   hooks/post-update.sample
+	new file:   hooks/pre-applypatch.sample
+	new file:   hooks/pre-commit.sample
+	new file:   hooks/pre-push.sample
+	new file:   hooks/pre-rebase.sample
+	new file:   hooks/pre-receive.sample
+	new file:   hooks/prepare-commit-msg.sample
+	new file:   hooks/update.sample
+	new file:   index
+	new file:   info/exclude
+	new file:   logs/HEAD
+	new file:   logs/refs/heads/master
+	new file:   objects/21/a401900437c50bc3c102f721fff649334c77f1
+	new file:   objects/22/87ae0898bc0eae78c0c0e661b20995f54c3338
+	new file:   objects/5e/0414d26bb7d5e5eff366a6fd441f27e8e40f9a
+	new file:   objects/92/f2df8b29b79c41195bb45217de9ada4e1d3ffe
+	new file:   objects/f5/fd97389c5348ee48695c6f31c3608776340c54
+	new file:   objects/fc/8eaad374e7278a896b6fbf7f4851b4564ef564
+	new file:   refs/heads/master
+
+.git $ git commit -m "Gitception!"
+-bash: !": event not found
+.git $ git commit -m "Gitception\!"
+[master (root-commit) ba7ef7a] Gitception\!
+ 25 files changed, 547 insertions(+)
+ create mode 100644 COMMIT_EDITMSG
+ create mode 100644 HEAD
+ create mode 100644 config
+ create mode 100644 description
+ create mode 100755 hooks/applypatch-msg.sample
+ create mode 100755 hooks/commit-msg.sample
+ create mode 100755 hooks/post-update.sample
+ create mode 100755 hooks/pre-applypatch.sample
+ create mode 100755 hooks/pre-commit.sample
+ create mode 100755 hooks/pre-push.sample
+ create mode 100755 hooks/pre-rebase.sample
+ create mode 100755 hooks/pre-receive.sample
+ create mode 100755 hooks/prepare-commit-msg.sample
+ create mode 100755 hooks/update.sample
+ create mode 100644 index
+ create mode 100644 info/exclude
+ create mode 100644 logs/HEAD
+ create mode 100644 logs/refs/heads/master
+ create mode 100644 objects/21/a401900437c50bc3c102f721fff649334c77f1
+ create mode 100644 objects/22/87ae0898bc0eae78c0c0e661b20995f54c3338
+ create mode 100644 objects/5e/0414d26bb7d5e5eff366a6fd441f27e8e40f9a
+ create mode 100644 objects/92/f2df8b29b79c41195bb45217de9ada4e1d3ffe
+ create mode 100644 objects/f5/fd97389c5348ee48695c6f31c3608776340c54
+ create mode 100644 objects/fc/8eaad374e7278a896b6fbf7f4851b4564ef564
+ create mode 100644 refs/heads/master
+.git $ gs
+On branch master
+nothing to commit, working tree clean
+.git $ cd ..
+git-sandbox $ cd .git/
+.git $ gs
+On branch master
+nothing to commit, working tree clean
+.git $ cd ../
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ vi template.html 
+git-sandbox $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   template.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ cd .git/
+.git $ git status
+On branch master
+nothing to commit, working tree clean
+.git $ cd ..
+git-sandbox $ git add template.html 
+git-sandbox $ gs
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   template.html
+
+git-sandbox $ cd .git/
+.git $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   index
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	objects/d6/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+.git $ cd ..
+git-sandbox $ git add -all && git status
+error: did you mean `--all` (with two dashes ?)
+git-sandbox $ git add --all && git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   template.html
+
+git-sandbox $ git commit -m "Edit h1" && git status
+[master f2e214b] Edit h1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ cd .git/
+.git $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   COMMIT_EDITMSG
+	modified:   index
+	modified:   logs/HEAD
+	modified:   logs/refs/heads/master
+	modified:   refs/heads/master
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	objects/ca/
+	objects/d6/
+	objects/f2/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+.git $ ls
+COMMIT_EDITMSG	config		hooks		info		objects
+HEAD		description	index		logs		refs
+.git $ ls -a
+.		COMMIT_EDITMSG	description	info		refs
+..		HEAD		hooks		logs
+.git		config		index		objects
+.git $ rm -rf .git/
+.git $ git status
+fatal: This operation must be run in a work tree
+.git $ cd ..
+git-sandbox $ touch style.css
+git-sandbox $ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+git-sandbox $ git add style.css 
+git-sandbox $ git commit -m "Added style.css"
+[master 4ab8b0d] Added style.css
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 style.css
+git-sandbox $ vi template.html 
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ git log
+commit 4ab8b0dbdcc545fd4cabdec62222f8f87d9cca24
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 12:04:36 2017 -0400
+
+    Added style.css
+
+commit f2e214bbec2cfbbdd20705b30c619f8e639dbd15
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 12:01:05 2017 -0400
+
+    Edit h1
+
+commit 2287ae0898bc0eae78c0c0e661b20995f54c3338
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 11:49:10 2017 -0400
+
+    First edit
+
+commit 92f2df8b29b79c41195bb45217de9ada4e1d3ffe
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 11:48:14 2017 -0400
+
+git-sandbox $ git cat-file -p 92f2df8
+tree f5fd97389c5348ee48695c6f31c3608776340c54
+author Elias Carlston <elias@eliascarlston.com> 1504540094 -0400
+committer Elias Carlston <elias@eliascarlston.com> 1504540094 -0400
+
+first file
+git-sandbox $ git cat-file -p 2287ae08
+tree 21a401900437c50bc3c102f721fff649334c77f1
+parent 92f2df8b29b79c41195bb45217de9ada4e1d3ffe
+author Elias Carlston <elias@eliascarlston.com> 1504540150 -0400
+committer Elias Carlston <elias@eliascarlston.com> 1504540150 -0400
+
+First edit
+git-sandbox $ git cat-file -p 21a40190
+100644 blob fc8eaad374e7278a896b6fbf7f4851b4564ef564	template.html
+git-sandbox $ git cat-file -p fc8eaad3
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Your page</title>
+    <meta name="description" content="First file">
+    <meta name="author" content="Elias Carlston">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+	<body>
+		<h1>Your Content</h1>
+	</body>
+</html>
+git-sandbox $ git cat-file -p f2e214b
+tree caeb2fc0d3ab1bd087966dbde2cd547285e04d61
+parent 2287ae0898bc0eae78c0c0e661b20995f54c3338
+author Elias Carlston <elias@eliascarlston.com> 1504540865 -0400
+committer Elias Carlston <elias@eliascarlston.com> 1504540865 -0400
+
+Edit h1
+git-sandbox $ git cat-file -p caeb2fc0d
+100644 blob d64387138b716994249a281b6df0bec74974c14a	template.html
+git-sandbox $ git cat-file -p d64387138b
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Your page</title>
+    <meta name="description" content="First file">
+    <meta name="author" content="Elias Carlston">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+	<body>
+		<h1>More Edits</h1>
+	</body>
+</html>
+git-sandbox $ 
+git-sandbox $ 
+git-sandbox $ 
+git-sandbox $ ls
+style.css	template.html
+git-sandbox $ mv style.css booyah.evs
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	booyah.evs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git rm style.css && git add booyah.evs && git status
+rm 'style.css'
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    style.css -> booyah.evs
+
+git-sandbox $ git reset HEAD .
+Unstaged changes after reset:
+D	style.css
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	booyah.evs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git checkout .
+git-sandbox $ gs
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	booyah.evs
+
+nothing added to commit but untracked files present (use "git add" to track)
+git-sandbox $ git clean -df .
+Removing booyah.evs
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ git mv style.css booyah.evs
+git-sandbox $ gs
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    style.css -> booyah.evs
+
+git-sandbox $ git branch
+* master
+git-sandbox $ git branch new-work
+git-sandbox $ git branch
+* master
+  new-work
+git-sandbox $ git checkout new-work
+A	booyah.evs
+D	style.css
+Switched to branch 'new-work'
+git-sandbox $ git status
+On branch new-work
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    style.css -> booyah.evs
+
+git-sandbox $ git branch
+  master
+* new-work
+git-sandbox $ git checkout -b bug-fixes && git branch
+A	booyah.evs
+D	style.css
+Switched to a new branch 'bug-fixes'
+* bug-fixes
+  master
+  new-work
+git-sandbox $ ls
+booyah.evs	template.html
+git-sandbox $ gs
+On branch bug-fixes
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    style.css -> booyah.evs
+
+git-sandbox $ git commit -m "Rename style to booyah"
+[bug-fixes d9d99a9] Rename style to booyah
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename style.css => booyah.evs (100%)
+git-sandbox $ gs
+On branch bug-fixes
+nothing to commit, working tree clean
+git-sandbox $ git checkout master
+Switched to branch 'master'
+git-sandbox $ ll
+total 8
+drwxr-xr-x   5 eliascarlston  staff  170 Sep  4 14:16 .
+drwxr-xr-x  21 eliascarlston  staff  714 Sep  4 11:39 ..
+drwxr-xr-x  12 eliascarlston  staff  408 Sep  4 14:16 .git
+-rw-r--r--   1 eliascarlston  staff    0 Sep  4 14:16 style.css
+-rw-r--r--   1 eliascarlston  staff  304 Sep  4 12:05 template.html
+git-sandbox $ vi style.css 
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git checkout bug-fixes
+error: Your local changes to the following files would be overwritten by checkout:
+	style.css
+Please commit your changes or stash them before you switch branches.
+Aborting
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git reset style.css
+Unstaged changes after reset:
+M	style.css
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git reset --hard style.css
+fatal: Cannot do hard reset with paths.
+git-sandbox $ git reset --hard HEAD
+HEAD is now at 4ab8b0d Added style.css
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ git reset  --help
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ git branch
+  bug-fixes
+* master
+  new-work
+git-sandbox $ git diff bug-fixes
+diff --git a/booyah.evs b/style.css
+similarity index 100%
+rename from booyah.evs
+rename to style.css
+git-sandbox $ git diff new-work
+git-sandbox $ git checkout !$
+git checkout new-work
+Switched to branch 'new-work'
+git-sandbox $ gs
+On branch new-work
+nothing to commit, working tree clean
+git-sandbox $ ls
+style.css	template.html
+git-sandbox $ vi style.css 
+git-sandbox $ git add !$ && git status
+git add style.css && git status
+On branch new-work
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   style.css
+
+git-sandbox $ git commit -m "New work"
+[new-work c5da34b] New work
+ 1 file changed, 3 insertions(+)
+git-sandbox $ gs
+On branch new-work
+nothing to commit, working tree clean
+git-sandbox $ git diff master
+diff --git a/style.css b/style.css
+index e69de29..70f178b 100644
+--- a/style.css
++++ b/style.css
+@@ -0,0 +1,3 @@
++body {
++  margin: 0 auto;
++}
+git-sandbox $ git diff new-work bug-fixes
+diff --git a/booyah.evs b/booyah.evs
+new file mode 100644
+index 0000000..e69de29
+diff --git a/style.css b/style.css
+deleted file mode 100644
+index 70f178b..0000000
+--- a/style.css
++++ /dev/null
+@@ -1,3 +0,0 @@
+-body {
+-  margin: 0 auto;
+-}
+git-sandbox $ git diff bug-fixes new-work
+diff --git a/booyah.evs b/booyah.evs
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/style.css b/style.css
+new file mode 100644
+index 0000000..70f178b
+--- /dev/null
++++ b/style.css
+@@ -0,0 +1,3 @@
++body {
++  margin: 0 auto;
++}
+git-sandbox $ gs
+On branch new-work
+nothing to commit, working tree clean
+git-sandbox $ gcm
+Switched to branch 'master'
+git-sandbox $ git merge new-work
+Updating 4ab8b0d..c5da34b
+Fast-forward
+ style.css | 3 +++
+ 1 file changed, 3 insertions(+)
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ git merge bug-fixes
+CONFLICT (modify/delete): style.css deleted in bug-fixes and modified in HEAD. Version HEAD of style.css left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
+git-sandbox $ gs
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+
+	new file:   booyah.evs
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+
+	deleted by them: style.css
+
+git-sandbox $ git merge --abort
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ git log
+commit c5da34bdbca80df583f0be4c369c77b2ac890a73
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 14:32:32 2017 -0400
+
+    New work
+
+commit 4ab8b0dbdcc545fd4cabdec62222f8f87d9cca24
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 12:04:36 2017 -0400
+
+    Added style.css
+
+commit f2e214bbec2cfbbdd20705b30c619f8e639dbd15
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 12:01:05 2017 -0400
+
+    Edit h1
+
+commit 2287ae0898bc0eae78c0c0e661b20995f54c3338
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 11:49:10 2017 -0400
+
+git-sandbox $ git reset 4ab8b0db
+Unstaged changes after reset:
+M	style.css
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git log
+commit 4ab8b0dbdcc545fd4cabdec62222f8f87d9cca24
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 12:04:36 2017 -0400
+
+    Added style.css
+
+commit f2e214bbec2cfbbdd20705b30c619f8e639dbd15
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 12:01:05 2017 -0400
+
+    Edit h1
+
+commit 2287ae0898bc0eae78c0c0e661b20995f54c3338
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 11:49:10 2017 -0400
+
+    First edit
+
+commit 92f2df8b29b79c41195bb45217de9ada4e1d3ffe
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 11:48:14 2017 -0400
+
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git diff
+diff --git a/style.css b/style.css
+index e69de29..70f178b 100644
+--- a/style.css
++++ b/style.css
+@@ -0,0 +1,3 @@
++body {
++  margin: 0 auto;
++}
+git-sandbox $ git log
+commit 4ab8b0dbdcc545fd4cabdec62222f8f87d9cca24
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 12:04:36 2017 -0400
+
+    Added style.css
+
+commit f2e214bbec2cfbbdd20705b30c619f8e639dbd15
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 12:01:05 2017 -0400
+
+    Edit h1
+
+commit 2287ae0898bc0eae78c0c0e661b20995f54c3338
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 11:49:10 2017 -0400
+
+    First edit
+
+commit 92f2df8b29b79c41195bb45217de9ada4e1d3ffe
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 11:48:14 2017 -0400
+
+git-sandbox $ gs
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git-sandbox $ git checkout style.css 
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ git branch
+  bug-fixes
+* master
+  new-work
+git-sandbox $ git checkout bug-fixes
+Switched to branch 'bug-fixes'
+git-sandbox $ gs
+On branch bug-fixes
+nothing to commit, working tree clean
+git-sandbox $ vi style.css
+git-sandbox $ gs
+On branch bug-fixes
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+git-sandbox $ git add style.css && git commit -m "Body width"
+[bug-fixes 2738f01] Body width
+ 1 file changed, 3 insertions(+)
+ create mode 100644 style.css
+git-sandbox $ gs
+On branch bug-fixes
+nothing to commit, working tree clean
+git-sandbox $ gcm
+Switched to branch 'master'
+git-sandbox $ git merge new-work
+Updating 4ab8b0d..c5da34b
+Fast-forward
+ style.css | 3 +++
+ 1 file changed, 3 insertions(+)
+git-sandbox $ cat style.css 
+body {
+  margin: 0 auto;
+}
+git-sandbox $ git merge bug-fixes
+Auto-merging style.css
+CONFLICT (content): Merge conflict in style.css
+Automatic merge failed; fix conflicts and then commit the result.
+git-sandbox $ vi style.css 
+git-sandbox $ gs
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+
+	new file:   booyah.evs
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   style.css
+
+git-sandbox $ git commit -m "Booyah"
+U	style.css
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+git-sandbox $ gs
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+
+	new file:   booyah.evs
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   style.css
+
+git-sandbox $ git add style.css 
+git-sandbox $ gs
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+	new file:   booyah.evs
+	modified:   style.css
+
+git-sandbox $ git commit -m "Booyah, resolve style conflict"
+[master efe161f] Booyah, resolve style conflict
+git-sandbox $ gs
+On branch master
+nothing to commit, working tree clean
+git-sandbox $ git log
+commit efe161f5b94eb2e8bd9f34a7e20cb522c3d74ac2
+Merge: c5da34b 2738f01
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 14:44:46 2017 -0400
+
+    Booyah, resolve style conflict
+
+commit 2738f0147a4dff4c4671eaed27b29bc9a7eed8f6
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 14:42:47 2017 -0400
+
+    Body width
+
+commit c5da34bdbca80df583f0be4c369c77b2ac890a73
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 14:32:32 2017 -0400
+
+    New work
+
+commit d9d99a9d8bbdc1036e8ed5e7e527f6abfb8adf9f
+Author: Elias Carlston <elias@eliascarlston.com>
+Date:   Mon Sep 4 14:16:23 2017 -0400
+git-sandbox $ 
